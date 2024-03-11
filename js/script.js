@@ -1,0 +1,37 @@
+const mqDark = window.matchMedia("(prefers-color-scheme: dark)")
+
+const darkModeToggle = document.querySelector("a.dark-mode-toggle")
+const darkModeToggleText = darkModeToggle.querySelector("span")
+
+const bodyTag = document.querySelector("body")
+
+
+darkModeToggle.addEventListener('click',function(){
+    bodyTag.classList.toggle('dark-mode')
+    if(bodyTag.classList.contains('dark-mode')) {
+        darkModeToggleText.innerHTML = 'Light Mode'
+    }else {
+        darkModeToggleText.innerHTML = 'Dark Mode'
+    }
+})
+
+const updateDarkMode = () => {
+    if(mqDark.matches) {
+        bodyTag.classList.add("dark-mode")
+        darkModeToggleText.innerHTML = 'Light Mode'
+    }else {
+        bodyTag.classList.remove("dark-mode")
+        darkModeToggleText.innerHTML = 'Dark Mode'
+    }
+}
+
+
+
+
+
+
+
+updateDarkMode()
+mqDark.addListener(function () {
+  updateDarkMode()
+})
