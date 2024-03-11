@@ -30,8 +30,10 @@ darkModeToggle.addEventListener('click',function(){
     bodyTag.classList.toggle('dark-mode')
     if(bodyTag.classList.contains('dark-mode')) {
         darkModeToggleText.innerHTML = 'Light Mode'
+        gsap.to("g.toggle", { x: 43 })
     }else {
         darkModeToggleText.innerHTML = 'Dark Mode'
+        gsap.to("g.toggle", { x: 19 })
     }
 })
 
@@ -39,9 +41,11 @@ const updateDarkMode = () => {
     if(mqDark.matches) {
         bodyTag.classList.add("dark-mode")
         darkModeToggleText.innerHTML = 'Light Mode'
+        gsap.to("g.toggle", { x: 43 })
     }else {
         bodyTag.classList.remove("dark-mode")
         darkModeToggleText.innerHTML = 'Dark Mode'
+        gsap.to("g.toggle", { x: 19 })
     }
 }
 
