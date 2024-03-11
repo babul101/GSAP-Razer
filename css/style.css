@@ -51,3 +51,30 @@ a.menu-toggle {
   z-index: 1;
 }
 
+nav {
+  max-width: 600px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: white;
+  padding: 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  transform: translate(100%,0);
+}
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+nav div.internal {
+  font-size: 48px;
+  line-height: 64px;
+  flex: 1;
+}
