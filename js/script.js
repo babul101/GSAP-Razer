@@ -27,7 +27,7 @@ menuToggle.addEventListener('click',function(){
 
 
 darkModeToggle.addEventListener('click',function(){
-    bodyTag.classList.toggle('dark-mode')
+    // bodyTag.classList.toggle('dark-mode')
     if(bodyTag.classList.contains('dark-mode')) {
         darkModeToggleText.innerHTML = 'Light Mode'
         gsap.to("g.toggle", { x: 43 })
@@ -35,6 +35,16 @@ darkModeToggle.addEventListener('click',function(){
         darkModeToggleText.innerHTML = 'Dark Mode'
         gsap.to("g.toggle", { x: 19 })
     }
+    const timeline = gsap.timeline()
+  
+  timeline
+  	.set("div.wipe", { height: "0%", top: "0%" })
+  	.to("div.wipe", { height: "100%", duration: 2 })
+  	.add(function () {
+  		  bodyTag.classList.toggle("dark-mode")
+	 	})
+  	.to("div.wipe", { height: "0%", top: "100%", duration: 2 })
+
 })
 
 const updateDarkMode = () => {
@@ -59,3 +69,25 @@ updateDarkMode()
 mqDark.addListener(function () {
   updateDarkMode()
 })
+
+const spiralTimeline = gsap.timeline({
+    repeat: -1
+  })
+  spiralTimeline
+  .set("svg.spiral rect", {
+    rotation: 0,
+    transformOrigin: "50% 50%"
+  })
+  .set("svg.spiral rect:nth-child(1)", {
+    rotation: 15
+  })
+  .set("svg.spiral rect:nth-child(3)", {
+    rotation: -15
+  })
+  .to("svg.spiral rect", { 
+    rotation: "+=90", 
+    transformOrigin: "50% 50%",
+    duration: 4,
+    stagger: -0.25
+  })
+

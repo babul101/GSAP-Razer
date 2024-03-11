@@ -19,6 +19,10 @@ body {
   line-height: 40px;
   background-color: var(--main-color);
   color:var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
  
 }
 
@@ -131,4 +135,30 @@ a.dark-mode-toggle g.toggle circle {
 
 a.dark-mode-toggle:hover g.toggle circle {
   transform: scale(1.75);
+}
+
+div.wipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--highlight-color);
+  z-index: 3;
+  transition: background-color 0.0001s 2s;
+
+}
+
+svg.spiral {
+  border: 2px solid var(--highlight-color);
+}
+
+svg.spiral rect {
+  fill: var(--highlight-color);
+  fill-opacity: 0;
+  stroke: var(--highlight-color);
+}
+
+svg.spiral rect:hover {
+  fill-opacity: 0.25;
 }
