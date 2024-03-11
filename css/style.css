@@ -64,6 +64,11 @@ nav {
   justify-content: space-between;
   flex-direction: column;
   transform: translate(100%,0);
+  transition: transform 1s;
+}
+
+body.nav-open nav {
+  transform: translate(0,0);
 }
 
 nav div {
