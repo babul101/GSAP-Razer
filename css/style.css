@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Razer;
+  src: url(/assets/HBM\ Razed\ Trend\ \(personal\ use\ only\).ttf);
+}
+
 :root {
   --main-color: aliceblue;
   --text-color: #000000;
@@ -11,8 +16,7 @@ body.dark-mode {
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: Razer;
   font-size: 24px;
   line-height: 40px;
   background-color: var(--main-color);
@@ -121,19 +125,20 @@ nav div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 }
 
 nav div.internal {
   font-size: 48px;
   line-height: 64px;
-  flex: 1;
+  
 }
 
-nav div.external {
+/* nav div.external {
   display: flex;
   flex-direction: column;
   flex: 1;
-}
+} */
 
 svg {
   vertical-align: middle;
